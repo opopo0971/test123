@@ -164,22 +164,32 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
 <main>
   <h1 class="st-h">급식실 건의사항</h1>
   <div class="st-dset">
-    <form class="st-sec st-dform" data-st="dform" data-tab="방명록" data-api="https://script.google.com/macros/s/AKfycbwuRmThH2sut0jzoHzVHgxkPdYEowlEC-95ahXZUXKsW5QHhSHcXbx1sOGcF7u8uqd-mA/exec">
-      <h2 class="st-h">건의사항 남기기</h2>
-      <label class="st-fl"><span>이름</span><input name="이름" required="" placeholder="예: 민수" type="text" maxlength="100"></label>
-      <label class="st-fl"><span>내용</span><textarea name="내용" required="" placeholder="하고 싶은 말을 남겨요" maxlength="500"></textarea></label>
+    <form class="st-sec st-dform" data-st="dform" data-tab="건의함" data-api="https://script.google.com/macros/s/AKfycbwuRmThH2sut0jzoHzVHgxkPdYEowlEC-95ahXZUXKsW5QHhSHcXbx1sOGcF7u8uqd-mA/exec">
+      <h2 class="st-h">건의 남기기</h2>
+      <div class="st-fl" role="radiogroup" aria-label="분류" data-kind="chips">
+        <span>분류</span>
+        <div class="st-rg">
+          <label><input type="radio" name="분류" value="시설" required=""><span>시설</span></label>
+          <label><input type="radio" name="분류" value="급식" required=""><span>급식</span></label>
+          <label><input type="radio" name="분류" value="행사" required=""><span>행사</span></label>
+          <label><input type="radio" name="분류" value="규칙" required=""><span>규칙</span></label>
+          <label><input type="radio" name="분류" value="기타" required=""><span>기타</span></label>
+        </div>
+      </div>
+      <label class="st-fl"><span>내용</span><textarea name="내용" required="" maxlength="500"></textarea></label>
+      <label class="st-fl"><span>연락처 🔒</span><input name="_연락처" type="text" maxlength="100"></label>
       <button class="st-btn st-sub" type="submit">저장하기</button>
       <p class="st-fmsg" aria-live="polite"></p>
     </form>
-    <section class="st-sec st-dlist" data-st="dlist" data-tab="방명록" data-api="https://script.google.com/macros/s/AKfycbwuRmThH2sut0jzoHzVHgxkPdYEowlEC-95ahXZUXKsW5QHhSHcXbx1sOGcF7u8uqd-mA/exec" data-show="이름,내용,createdAt" data-view="bubble" data-sort="createdAt" data-desc="1" data-limit="20" data-search="">
+    <section class="st-sec st-dlist" data-st="dlist" data-tab="건의함" data-api="https://script.google.com/macros/s/AKfycbwuRmThH2sut0jzoHzVHgxkPdYEowlEC-95ahXZUXKsW5QHhSHcXbx1sOGcF7u8uqd-mA/exec" data-show="분류,내용,createdAt" data-view="card" data-sort="createdAt" data-desc="1" data-limit="20" data-filter="분류">
       <div class="st-dl-top">
-        <h2 class="st-h">친구들이 남긴 글</h2>
+        <h2 class="st-h">건의 목록</h2>
         <button class="st-dl-rf" type="button">↻ 새로고침</button>
       </div>
       <div class="st-dl-out" aria-live="polite"></div>
     </section>
-    <section class="st-sec st-dstat" data-st="dstat" data-tab="방명록" data-api="https://script.google.com/macros/s/AKfycbwuRmThH2sut0jzoHzVHgxkPdYEowlEC-95ahXZUXKsW5QHhSHcXbx1sOGcF7u8uqd-mA/exec" data-calc="count" data-unit="개">
-      <h2 class="st-h">지금까지 남긴 글</h2>
+    <section class="st-sec st-dstat" data-st="dstat" data-tab="건의함" data-api="https://script.google.com/macros/s/AKfycbwuRmThH2sut0jzoHzVHgxkPdYEowlEC-95ahXZUXKsW5QHhSHcXbx1sOGcF7u8uqd-mA/exec" data-calc="count" data-field="분류" data-unit="개">
+      <h2 class="st-h">분류별 건의 수</h2>
       <div class="st-ds-out" aria-live="polite"></div>
     </section>
   </div>
