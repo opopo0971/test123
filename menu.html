@@ -157,20 +157,34 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
   <div class="st-nav-in">
     <a class="st-nav-a" href="index.html">홈</a>
     <a class="st-nav-a" href="food.html">음식</a>
-    <a class="st-nav-a is-on" href="menu.html">메뉴</a>
+    <a class="st-nav-a is-on" href="menu.html">급식실</a>
   </div>
 </nav>
 
 <main>
-  <h1 class="st-h">메뉴</h1>
-  <p class="st-p">이 페이지에 들어갈 내용을 왼쪽 블록 넣기로 채워 보세요.</p>
-  <section class="st-sec st-dlist" data-st="dlist" data-tab="내 데이터" data-api="https://script.google.com/macros/s/AKfycbwuRmThH2sut0jzoHzVHgxkPdYEowlEC-95ahXZUXKsW5QHhSHcXbx1sOGcF7u8uqd-mA/exec" data-show="이름,내용,createdAt" data-view="card" data-sort="createdAt" data-desc="1" data-limit="20">
-    <div class="st-dl-top">
-      <h2 class="st-h">기록 목록</h2>
-      <button class="st-dl-rf" type="button">↻ 새로고침</button>
-    </div>
-    <div class="st-dl-out" aria-live="polite"></div>
-  </section>
+  <h1 class="st-h">급식실 건의사항</h1>
+  <div class="st-dset">
+    <form class="st-sec st-dform" data-st="dform" data-tab="방명록" data-api="https://script.google.com/macros/s/AKfycbwuRmThH2sut0jzoHzVHgxkPdYEowlEC-95ahXZUXKsW5QHhSHcXbx1sOGcF7u8uqd-mA/exec">
+      <h2 class="st-h">건의사항 남기기</h2>
+      <label class="st-fl"><span>이름</span><input name="이름" required="" placeholder="예: 민수" type="text" maxlength="100"></label>
+      <label class="st-fl"><span>내용</span><textarea name="내용" required="" placeholder="하고 싶은 말을 남겨요" maxlength="500"></textarea></label>
+      <button class="st-btn st-sub" type="submit">저장하기</button>
+      <p class="st-fmsg" aria-live="polite"></p>
+    </form>
+    <section class="st-sec st-dlist" data-st="dlist" data-tab="방명록" data-api="https://script.google.com/macros/s/AKfycbwuRmThH2sut0jzoHzVHgxkPdYEowlEC-95ahXZUXKsW5QHhSHcXbx1sOGcF7u8uqd-mA/exec" data-show="이름,내용,createdAt" data-view="bubble" data-sort="createdAt" data-desc="1" data-limit="20" data-search="">
+      <div class="st-dl-top">
+        <h2 class="st-h">친구들이 남긴 글</h2>
+        <button class="st-dl-rf" type="button">↻ 새로고침</button>
+      </div>
+      <div class="st-dl-out" aria-live="polite"></div>
+    </section>
+    <section class="st-sec st-dstat" data-st="dstat" data-tab="방명록" data-api="https://script.google.com/macros/s/AKfycbwuRmThH2sut0jzoHzVHgxkPdYEowlEC-95ahXZUXKsW5QHhSHcXbx1sOGcF7u8uqd-mA/exec" data-calc="count" data-unit="개">
+      <h2 class="st-h">지금까지 남긴 글</h2>
+      <div class="st-ds-out" aria-live="polite"></div>
+    </section>
+  </div>
+  
+  
 </main>
 
 
